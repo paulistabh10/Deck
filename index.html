@@ -1,0 +1,629 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck Plástico Modular - Textura Madeira</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#EE4D2D',
+                            darkRed: '#D0011B',
+                            green: '#25D366',
+                            woodLight: '#B86B4D',
+                            woodDark: '#5C382A',
+                            woodMedium: '#8B4A2F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .wood-pattern {
+            background-color: #fcfbfa;
+            background-image: radial-gradient(#e5e7eb 0.75px, transparent 0.75px);
+            background-size: 12px 12px;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased pb-24 md:pb-8">
+
+    <!-- Top Notice Bar -->
+    <div class="bg-gradient-to-r from-red-600 to-brand-red text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center shadow-sm flex items-center justify-center gap-2">
+        <i class="fa-solid fa-bolt text-yellow-300 animate-bounce"></i>
+        <span>OFERTA IMPERDÍVEL: DESCONTO PROGRESSIVO DE ATÉ 40% POR QUANTIDADE!</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-5xl mx-auto px-4 py-6">
+
+        <!-- Breadcrumb -->
+        <nav class="text-xs text-gray-500 mb-4 flex items-center gap-2">
+            <a href="#" class="hover:underline">Início</a> &gt;
+            <a href="#" class="hover:underline">Casa e Decoração</a> &gt;
+            <span class="text-gray-800 font-medium">Pisos e Decks</span>
+        </nav>
+
+        <!-- Product Hero Grid -->
+        <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-4 sm:p-8">
+            
+            <!-- GALLERY SECTION -->
+            <div class="flex flex-col gap-4">
+                <!-- Main Viewer (SVG Vector Rendering) -->
+                <div class="relative aspect-square bg-slate-100 rounded-2xl overflow-hidden border border-gray-200 flex items-center justify-center p-6 wood-pattern group">
+                    
+                    <span id="discountBadge" class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10">
+                        PREÇO PADRÃO
+                    </span>
+
+                    <span class="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10 flex items-center gap-1">
+                        <i class="fa-solid fa-boxes-stacked"></i> Estoque Limitado
+                    </span>
+
+                    <!-- Main SVG Graphic: Modular Deck Tile -->
+                    <div id="mainImageContainer" class="w-full h-full flex items-center justify-center transition-all duration-300 transform group-hover:scale-105">
+                        <svg id="deckSvg" viewBox="0 0 400 400" class="w-full h-full drop-shadow-2xl">
+                            <!-- Base shadow -->
+                            <ellipse cx="200" cy="320" rx="140" ry="25" fill="rgba(0,0,0,0.15)" />
+                            
+                            <!-- Deck Base Structure (Black Grid Beneath) -->
+                            <g id="deckBase">
+                                <rect x="70" y="110" width="260" height="190" rx="10" fill="#1e1e1e" />
+                                <!-- Grid Connectors -->
+                                <circle cx="65" cy="130" r="6" fill="#111" />
+                                <circle cx="65" cy="200" r="6" fill="#111" />
+                                <circle cx="65" cy="270" r="6" fill="#111" />
+                                <circle cx="335" cy="130" r="6" fill="#111" />
+                                <circle cx="335" cy="200" r="6" fill="#111" />
+                                <circle cx="335" cy="270" r="6" fill="#111" />
+                            </g>
+
+                            <!-- Wood Planks (4 Planks) -->
+                            <g id="woodPlanks">
+                                <!-- Plank 1 -->
+                                <rect x="80" y="100" width="240" height="38" rx="4" fill="#B86B4D" stroke="#8B4A2F" stroke-width="2" />
+                                <line x1="90" y1="110" x2="310" y2="110" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+                                <line x1="90" y1="120" x2="310" y2="120" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+
+                                <!-- Plank 2 -->
+                                <rect x="80" y="146" width="240" height="38" rx="4" fill="#B86B4D" stroke="#8B4A2F" stroke-width="2" />
+                                <line x1="90" y1="156" x2="310" y2="156" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+                                <line x1="90" y1="166" x2="310" y2="166" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+
+                                <!-- Plank 3 -->
+                                <rect x="80" y="192" width="240" height="38" rx="4" fill="#B86B4D" stroke="#8B4A2F" stroke-width="2" />
+                                <line x1="90" y1="202" x2="310" y2="202" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+                                <line x1="90" y1="212" x2="310" y2="212" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+
+                                <!-- Plank 4 -->
+                                <rect x="80" y="238" width="240" height="38" rx="4" fill="#B86B4D" stroke="#8B4A2F" stroke-width="2" />
+                                <line x1="90" y1="248" x2="310" y2="248" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+                                <line x1="90" y1="258" x2="310" y2="258" stroke="#8B4A2F" stroke-width="1.5" opacity="0.4" />
+                            </g>
+
+                            <!-- Highlight overlay -->
+                            <rect x="80" y="100" width="240" height="176" rx="6" fill="url(#shineGrad)" opacity="0.15" />
+                            <defs>
+                                <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffffff" />
+                                    <stop offset="100%" stop-color="#000000" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Color Selection Thumbnails -->
+                <div class="flex items-center justify-center gap-3">
+                    <button onclick="changeColor('marrom', '#B86B4D', '#8B4A2F')" class="color-btn active ring-2 ring-brand-red p-1 rounded-xl bg-white transition-all shadow-sm hover:scale-105">
+                        <div class="w-12 h-12 rounded-lg bg-[#B86B4D] border border-black/10 flex items-center justify-center text-white text-xs font-bold">
+                            Marrom
+                        </div>
+                    </button>
+                    <button onclick="changeColor('cafe', '#4A2E22', '#2D1B13')" class="color-btn p-1 rounded-xl bg-white transition-all shadow-sm hover:scale-105">
+                        <div class="w-12 h-12 rounded-lg bg-[#4A2E22] border border-black/10 flex items-center justify-center text-white text-xs font-bold">
+                            Café
+                        </div>
+                    </button>
+                    <button onclick="changeColor('terracota', '#A0522D', '#6B371E')" class="color-btn p-1 rounded-xl bg-white transition-all shadow-sm hover:scale-105">
+                        <div class="w-12 h-12 rounded-lg bg-[#A0522D] border border-black/10 flex items-center justify-center text-white text-xs font-bold">
+                            Terracota
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT INFO & ORDER FORM -->
+            <div class="flex flex-col justify-between">
+                <div>
+                    <!-- Title & Badges -->
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-0.5 rounded font-semibold">Mais Vendido</span>
+                        <span class="text-xs text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 font-medium">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Estoque sujeito a alteração
+                        </span>
+                    </div>
+
+                    <h1 class="text-xl sm:text-2xl font-extrabold text-gray-900 leading-snug mb-3">
+                        Deck Plástico Piso Modular Encaixável Textura Madeira
+                    </h1>
+                    <p class="text-xs text-gray-500 mb-4">
+                        Ideal para Banheiro, Jardim, Box, Piscina, Varanda e Sacada. Encaixe prático sem necessidade de cola ou ferramentas.
+                    </p>
+
+                    <!-- Rating -->
+                    <div class="flex items-center gap-2 mb-4 bg-amber-50 p-2.5 rounded-xl border border-amber-100 w-fit">
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-700">5.0</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-600 font-medium">Garantia Direta pelo WhatsApp</span>
+                    </div>
+
+                    <hr class="my-4 border-gray-100">
+
+                    <!-- Price Box & Tier Discount Card -->
+                    <div class="bg-gradient-to-br from-red-50 to-orange-50 p-4 rounded-2xl border border-red-100 mb-4">
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Preço Unitário Calculado:</div>
+                        <div class="flex items-baseline gap-3 mb-2">
+                            <span id="unitPriceDisplay" class="text-3xl font-black text-brand-red">R$ 20,00</span>
+                            <span id="tierTag" class="bg-brand-red text-white text-xs font-bold px-2 py-0.5 rounded">R$ 20/unid</span>
+                        </div>
+
+                        <!-- Price Tiers Table -->
+                        <div class="mt-3 pt-3 border-t border-red-200/60 grid grid-cols-3 gap-2 text-center text-xs">
+                            <div id="tier1" class="p-2 rounded-xl bg-white border-2 border-brand-red shadow-sm">
+                                <div class="font-extrabold text-gray-800">1 a 49 un.</div>
+                                <div class="text-brand-red font-black text-sm">R$ 20,00</div>
+                            </div>
+                            <div id="tier2" class="p-2 rounded-xl bg-white border border-gray-200">
+                                <div class="font-extrabold text-gray-800">50+ un.</div>
+                                <div class="text-emerald-600 font-black text-sm">R$ 15,00</div>
+                                <div class="text-[9px] text-emerald-700 font-bold">25% OFF</div>
+                            </div>
+                            <div id="tier3" class="p-2 rounded-xl bg-white border border-gray-200">
+                                <div class="font-extrabold text-gray-800">100+ un.</div>
+                                <div class="text-emerald-600 font-black text-sm">R$ 12,00</div>
+                                <div class="text-[9px] text-emerald-700 font-bold">40% OFF</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Options Selection -->
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                                Cor Selecionada: <span id="colorLabel" class="text-brand-red font-semibold">Marrom</span>
+                            </label>
+                        </div>
+
+                        <!-- Quantity Selector -->
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Quantidade (Placas):</label>
+                            <div class="flex flex-wrap items-center gap-3">
+                                <div class="flex items-center border border-gray-300 rounded-xl overflow-hidden bg-white shadow-sm">
+                                    <button onclick="updateQty(-10)" class="px-2.5 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 font-bold transition-all text-xs">-10</button>
+                                    <button onclick="updateQty(-1)" class="px-3 py-2 bg-gray-50 text-gray-600 hover:bg-gray-100 font-bold transition-all">-</button>
+                                    <input type="number" id="qtyInput" value="1" min="1" onchange="setQty(this.value)" class="w-16 py-2 text-center text-sm font-extrabold text-gray-800 focus:outline-none">
+                                    <button onclick="updateQty(1)" class="px-3 py-2 bg-gray-50 text-gray-600 hover:bg-gray-100 font-bold transition-all">+</button>
+                                    <button onclick="updateQty(10)" class="px-2.5 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 font-bold transition-all text-xs">+10</button>
+                                </div>
+                                
+                                <!-- Quick Select Buttons -->
+                                <div class="flex gap-1.5">
+                                    <button onclick="setQty(50)" class="px-2.5 py-1.5 text-xs bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold rounded-lg border border-amber-300 transition-all">50 un. (R$ 15)</button>
+                                    <button onclick="setQty(100)" class="px-2.5 py-1.5 text-xs bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-bold rounded-lg border border-emerald-300 transition-all">100 un. (R$ 12)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Info Display -->
+                    <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-200 mb-6 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 font-medium">WhatsApp de Vendas Directa:</div>
+                                <div class="text-sm font-black text-emerald-900">(31) 98585-4150</div>
+                            </div>
+                        </div>
+                        <span class="text-[11px] bg-emerald-200 text-emerald-800 px-2 py-1 rounded-md font-bold">Online</span>
+                    </div>
+                </div>
+
+                <!-- WhatsApp CTA Button -->
+                <button onclick="sendToWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-emerald-200 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 text-lg">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Chamar no WhatsApp Agora</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- FEATURES SECTION -->
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-2 text-lg">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+                <h4 class="text-xs font-bold text-gray-800">100% Impermeável</h4>
+                <p class="text-[11px] text-gray-500 mt-1">Resistente à água e umidade</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-2 text-lg">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <h4 class="text-xs font-bold text-gray-800">Fácil Encaixe</h4>
+                <p class="text-[11px] text-gray-500 mt-1">Montagem simples sem cola</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2 text-lg">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <h4 class="text-xs font-bold text-gray-800">Sustentável</h4>
+                <p class="text-[11px] text-gray-500 mt-1">Plástico durável e ecológico</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                <div class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mb-2 text-lg">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4 class="text-xs font-bold text-gray-800">Alta Durabilidade</h4>
+                <p class="text-[11px] text-gray-500 mt-1">Suporta peso e alto tráfego</p>
+            </div>
+        </div>
+
+        <!-- PRODUCT DESCRIPTION DETAILED -->
+        <div class="mt-8 bg-white rounded-3xl shadow-lg border border-gray-100 p-6 sm:p-8">
+            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-circle-info text-brand-red"></i>
+                Descrição Completa do Produto
+            </h3>
+            <div class="prose text-sm text-gray-600 space-y-3 leading-relaxed">
+                <p>
+                    O <strong>Deck Plástico Piso Modular Encaixável Textura Madeira</strong> é a solução perfeita para transformar seus ambientes internos e externos com elegância, rapidez e praticidade.
+                </p>
+                <p>
+                    Com sistema inteligente de encaixe macho-fêmea, você mesmo pode realizar a instalação sem a necessidade de obras, colas ou contratação de mão de obra especializada.
+                </p>
+                
+                <h4 class="font-bold text-gray-800 mt-4 mb-2">Tabela Especial Atacado e Varejo:</h4>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>1 a 49 unidades:</strong> R$ 20,00 por peça</li>
+                    <li><strong>A partir de 50 unidades:</strong> R$ 15,00 por peça (Economia de 25%)</li>
+                    <li><strong>A partir de 100 unidades:</strong> R$ 12,00 por peça (Economia de 40%)</li>
+                </ul>
+
+                <p class="text-xs text-amber-700 bg-amber-50 p-2.5 rounded-lg border border-amber-200 font-semibold mt-3">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Importante: Estoque sujeito a alteração sem aviso prévio. Garanta seu lote pelo WhatsApp!
+                </p>
+            </div>
+        </div>
+
+        <!-- REVIEWS SECTION -->
+        <div class="mt-8 bg-white rounded-3xl shadow-lg border border-gray-100 p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-100">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <i class="fa-solid fa-comments text-brand-red"></i>
+                        Avaliações dos Clientes
+                    </h3>
+                    <p class="text-xs text-gray-500 mt-1">Opiniões de quem já comprou e instalou em casa</p>
+                </div>
+                <div class="flex items-center gap-3 bg-amber-50 px-4 py-2 rounded-2xl border border-amber-100 self-start sm:self-auto">
+                    <div class="text-2xl font-black text-amber-600">4.6</div>
+                    <div>
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <div class="text-[10px] text-gray-500 font-medium">Média de 5 avaliações recentes</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List of 5 Reviews -->
+            <div class="space-y-4">
+                <!-- Review 1: 5 Stars -->
+                <div class="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red font-bold text-xs flex items-center justify-center">
+                                RS
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-gray-800">Rodrigo Silva</span>
+                                <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium ml-2 border border-emerald-100">
+                                    <i class="fa-solid fa-circle-check"></i> Compra Verificada
+                                </span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-gray-400">Há 2 dias</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-1.5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Comprei 60 peças para colocar na área da piscina e ficou sensacional! Muito fácil de montar, encaixa perfeitamente. O preço de R$ 15,00 no lote valeu muito a pena.
+                    </p>
+                </div>
+
+                <!-- Review 2: 5 Stars -->
+                <div class="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 font-bold text-xs flex items-center justify-center">
+                                MC
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-gray-800">Mariana Costa</span>
+                                <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium ml-2 border border-emerald-100">
+                                    <i class="fa-solid fa-circle-check"></i> Compra Verificada
+                                </span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-gray-400">Há 1 semana</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-1.5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Coloquei no box do banheiro da minha mãe por causa do risco de escorregar. O material é muito resistente e fácil de lavar. O atendimento no WhatsApp foi super rápido!
+                    </p>
+                </div>
+
+                <!-- Review 3: 4 Stars -->
+                <div class="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-blue-500/10 text-blue-700 font-bold text-xs flex items-center justify-center">
+                                CA
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-gray-800">Carlos Eduardo Andrade</span>
+                                <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium ml-2 border border-emerald-100">
+                                    <i class="fa-solid fa-circle-check"></i> Compra Verificada
+                                </span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-gray-400">Há 2 semanas</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-1.5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star text-gray-300"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Produto de ótima qualidade, cor linda (peguei a Terracota). Dei 4 estrelas só porque precisei pedir mais 10 peças que faltaram para fechar o canto da sacada, mas no geral aprovadíssimo.
+                    </p>
+                </div>
+
+                <!-- Review 4: 5 Stars -->
+                <div class="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-700 font-bold text-xs flex items-center justify-center">
+                                PN
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-gray-800">Patricia Nogueira</span>
+                                <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium ml-2 border border-emerald-100">
+                                    <i class="fa-solid fa-circle-check"></i> Compra Verificada
+                                </span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-gray-400">Há 3 semanas</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-1.5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Peguei o lote de 100 peças por R$ 12,00 para um espaço gourmet. Ficou parecendo madeira de verdade sem o trabalho de ter que passar verniz. Chegou super rápido aqui!
+                    </p>
+                </div>
+
+                <!-- Review 5: 3 Stars -->
+                <div class="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-700 font-bold text-xs flex items-center justify-center">
+                                FL
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-gray-800">Fernando Lima</span>
+                                <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded font-medium ml-2 border border-emerald-100">
+                                    <i class="fa-solid fa-circle-check"></i> Compra Verificada
+                                </span>
+                            </div>
+                        </div>
+                        <span class="text-[11px] text-gray-400">Há 1 mês</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-1.5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star text-gray-300"></i>
+                        <i class="fa-regular fa-star text-gray-300"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        O produto em si é muito bom e bem feito. Só dou 3 estrelas porque atrasou 1 dia na entrega da transportadora por conta da chuva, mas o vendedor me atendeu super bem pelo WhatsApp.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Sticky Bottom Bar Mobile -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 shadow-2xl flex items-center justify-between md:hidden z-50">
+        <div>
+            <div class="text-[10px] text-gray-500 font-bold" id="stickyQtyInfo">1 unidade</div>
+            <div class="text-lg font-black text-brand-red" id="stickyPrice">R$ 20,00</div>
+        </div>
+        <button onclick="sendToWhatsApp()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-5 rounded-xl shadow-md flex items-center gap-2 text-sm">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Chamar Vendedor</span>
+        </button>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let currentQty = 1;
+        let selectedColor = 'Marrom';
+        const targetWhatsApp = '5531985854150';
+
+        function getUnitPrice(qty) {
+            if (qty >= 100) return 12.00;
+            if (qty >= 50) return 15.00;
+            return 20.00;
+        }
+
+        function calculateAndUpdate() {
+            if (currentQty < 1) currentQty = 1;
+            document.getElementById('qtyInput').value = currentQty;
+
+            const unitPrice = getUnitPrice(currentQty);
+            const totalPrice = (unitPrice * currentQty).toFixed(2).replace('.', ',');
+
+            // Update price labels
+            document.getElementById('unitPriceDisplay').innerText = `R$ ${unitPrice.toFixed(2).replace('.', ',')}`;
+            document.getElementById('stickyPrice').innerText = `R$ ${totalPrice}`;
+            document.getElementById('stickyQtyInfo').innerText = `${currentQty} un. (R$ ${unitPrice.toFixed(2).replace('.', ',')}/un)`;
+
+            // Update discount badge and tiers visual highlight
+            const tier1 = document.getElementById('tier1');
+            const tier2 = document.getElementById('tier2');
+            const tier3 = document.getElementById('tier3');
+            const tierTag = document.getElementById('tierTag');
+            const discountBadge = document.getElementById('discountBadge');
+
+            tier1.className = "p-2 rounded-xl bg-white border border-gray-200";
+            tier2.className = "p-2 rounded-xl bg-white border border-gray-200";
+            tier3.className = "p-2 rounded-xl bg-white border border-gray-200";
+
+            if (currentQty >= 100) {
+                tier3.className = "p-2 rounded-xl bg-emerald-50 border-2 border-emerald-500 shadow-md";
+                tierTag.innerText = "40% OFF - LOTE MAIOR";
+                tierTag.className = "bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded";
+                discountBadge.innerText = "-40% OFF";
+                discountBadge.className = "absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10";
+            } else if (currentQty >= 50) {
+                tier2.className = "p-2 rounded-xl bg-emerald-50 border-2 border-emerald-500 shadow-md";
+                tierTag.innerText = "25% OFF - ATACADO";
+                tierTag.className = "bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded";
+                discountBadge.innerText = "-25% OFF";
+                discountBadge.className = "absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10";
+            } else {
+                tier1.className = "p-2 rounded-xl bg-white border-2 border-brand-red shadow-md";
+                tierTag.innerText = "R$ 20/unid";
+                tierTag.className = "bg-brand-red text-white text-xs font-bold px-2 py-0.5 rounded";
+                discountBadge.innerText = "VAREJO";
+                discountBadge.className = "absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-10";
+            }
+        }
+
+        function updateQty(change) {
+            currentQty += change;
+            calculateAndUpdate();
+        }
+
+        function setQty(val) {
+            currentQty = parseInt(val) || 1;
+            calculateAndUpdate();
+        }
+
+        function changeColor(colorName, mainHex, borderHex) {
+            selectedColor = colorName.charAt(0).toUpperCase() + colorName.slice(1);
+            document.getElementById('colorLabel').innerText = selectedColor;
+
+            // Update SVG colors dynamically
+            const woodPlanks = document.querySelectorAll('#woodPlanks rect');
+            woodPlanks.forEach(plank => {
+                plank.setAttribute('fill', mainHex);
+                plank.setAttribute('stroke', borderHex);
+            });
+
+            const woodLines = document.querySelectorAll('#woodPlanks line');
+            woodLines.forEach(line => {
+                line.setAttribute('stroke', borderHex);
+            });
+
+            // Update button active states
+            const buttons = document.querySelectorAll('.color-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-brand-red');
+            });
+            event.currentTarget.classList.add('ring-2', 'ring-brand-red');
+        }
+
+        function sendToWhatsApp() {
+            const unitPrice = getUnitPrice(currentQty);
+            const total = (unitPrice * currentQty).toFixed(2).replace('.', ',');
+            
+            const message = `Olá! Gostaria de fazer um pedido do *Deck Plástico Piso Modular*.\n\n` +
+                            `• *Cor Escolhida:* ${selectedColor}\n` +
+                            `• *Quantidade:* ${currentQty} peça(s)\n` +
+                            `• *Valor Unitário:* R$ ${unitPrice.toFixed(2).replace('.', ',')}\n` +
+                            `• *Valor Total:* R$ ${total}\n\n` +
+                            `Vi o anúncio e gostaria de consultar a disponibilidade do estoque e o frete!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetWhatsApp}&text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Initialize display
+        calculateAndUpdate();
+    </script>
+</body>
+</html>
+```
